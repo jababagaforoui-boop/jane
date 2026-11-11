@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5ead5">
+  <title>A Special Award Just for You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" id="ambient" aria-hidden="true"></div>
+  <canvas id="fireworks" aria-hidden="true"></canvas>
+  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="A little world of love"><span>♡</span> A LITTLE WORLD OF JASMEN</a>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">☾</button>
+  </header>
+
+  <main>
+    <!-- Welcome -->
+    <section class="screen active" id="welcomeScreen">
+      <div class="welcome-wrap">
+        <div class="eyebrow">A LETTER MADE BY JAZIE</div>
+        <h1>Welcome to My<br><em>Little World of Love</em> <span class="pink">♡</span></h1>
+        <p class="intro">Someone very special deserves something extraordinary. Before we begin, may I know your beautiful name?</p>
+        <div class="envelope-scene" id="envelopeScene">
+          <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-paper"><span>For someone special</span><b>♡</b></div>
+            <div class="envelope-front"></div>
+            <div class="wax-seal">♡</div>
+          </div>
+          <span class="envelope-spark spark-one">✧</span><span class="envelope-spark spark-two">✦</span>
+        </div>
+        <form id="nameForm" class="name-form">
+          <label for="visitorName">YOUR BEAUTIFUL NAME</label>
+          <input id="visitorName" name="visitorName" maxlength="40" autocomplete="name" placeholder="Enter your name here..." required>
+          <button class="primary-btn" type="submit">Open Your Love Letter <span>💌</span></button>
+          <p class="tiny-note">Made with tenderness, just for you.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Title selection -->
+    <section class="screen" id="choiceScreen">
+      <div class="section-shell">
+        <div class="eyebrow">A LITTLE QUESTION FOR YOU</div>
+        <h2>How Should I Address You,<br><em>My Love?</em> <span class="pink">♡</span></h2>
+        <p class="intro">Every special person deserves a special title, <strong id="nameGreeting"></strong>.</p>
+        <div class="choice-grid">
+          <button class="choice-card wife-card" type="button" data-role="wife">
+            <span class="choice-art">💍</span><span class="mini-rose">🌹</span>
+            <span class="choice-title">TO BE MY LAWFUL WIFE</span>
+            <span class="choice-desc">The woman I want to spend forever with.</span>
+            <span class="choose-link">CHOOSE THIS TITLE　♡</span>
+          </button>
+          <button class="choice-card girlfriend-card" type="button" data-role="girlfriend">
+            <span class="choice-art">🌷</span><span class="mini-rose">💌</span>
+            <span class="choice-title">MY LOVELY GIRLFRIEND</span>
+            <span class="choice-desc">The girl who makes my world more beautiful.</span>
+            <span class="choose-link">CHOOSE THIS TITLE　♡</span>
+          </button>
+        </div>
+        <button class="text-btn" id="backToName" type="button">← Change name</button>
+      </div>
+    </section>
+
+    <!-- Certificate -->
+    <section class="screen" id="certificateScreen">
+      <div class="celebration-heading">
+        <div class="eyebrow">A MOMENT WORTH CELEBRATING</div>
+        <h2 id="announcement">THIS SPECIAL HONOR BELONGS TO YOU! ♡</h2>
+        <p>Because someone as wonderful as you deserves to be celebrated.</p>
+      </div>
+
+      <div class="certificate-layout">
+        <article class="certificate" id="certificate">
+          <div class="cert-inner">
+            <div class="cert-corner corner-tl">❦</div><div class="cert-corner corner-tr">❦</div>
+            <div class="cert-corner corner-bl">❦</div><div class="cert-corner corner-br">❦</div>
+            <div class="cert-topline">✧　A TOKEN OF LOVE & APPRECIATION　✧</div>
+            <div class="cert-emblem">♡</div>
+            <div class="cert-heading">CERTIFICATE OF APPRECIATION</div>
+            <div class="cert-rule"><span>❧</span></div>
+            <h1 id="certTitle">THE BEST GIRLFRIEND<br>IN THE WHOLE WORLD ♡</h1>
+            <p class="awarded">This certificate is lovingly and proudly awarded to</p>
+            <div class="recipient" id="recipientName">Your Beautiful Name</div>
+            <div class="cert-message" id="certMessage"></div>
+            <div class="cert-footer">OFFICIALLY DECLARED: <span id="certFooter">THE MOST LOVED GIRLFRIEND</span></div>
+            <div class="signature-row">
+              <div><span class="signature">With all my love</span><small>GIVEN WITH LOVE, TODAY & ALWAYS</small></div>
+              <div class="seal">♡<small>FOREVER</small></div>
+              <div><span class="signature">Especially for you</span><small>A LITTLE REMINDER OF YOUR WORTH</small></div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="bouquet-area">
+          <div class="bouquet-caption">A BOUQUET, JUST FOR YOU</div>
+          <div class="bouquet" aria-label="A blooming bouquet of flowers">
+            <div class="flower f1"><i></i><b></b></div><div class="flower f2"><i></i><b></b></div>
+            <div class="flower f3"><i></i><b></b></div><div class="flower f4"><i></i><b></b></div>
+            <div class="flower f5"><i></i><b></b></div><div class="flower f6"><i></i><b></b></div>
+            <div class="flower f7"><i></i><b></b></div><div class="flower f8"><i></i><b></b></div>
+            <div class="flower f9"><i></i><b></b></div>
+            <div class="stems"></div><div class="wrap-paper"></div><div class="bouquet-ribbon">♡</div>
+          </div>
+          <p class="bouquet-note">A thousand flowers could never say<br>everything my heart wants to tell you.</p>
+        </aside>
+      </div>
+
+      <section class="music-box">
+        <div class="music-icon">♫</div>
+        <div class="music-info"><strong>A Little Song Just for You ♡</strong><span>Our little vintage music box</span></div>
+        <div class="equalizer" id="equalizer"><i></i><i></i><i></i><i></i><i></i></div>
+        <button id="musicToggle" class="music-btn" type="button">Play music</button>
+      </section>
+      <div class="youtube-frame" id="youtubeFrame" aria-hidden="true">
+        <iframe id="youtubePlayer" title="A little song just for you" src="https://www.youtube-nocookie.com/embed/nXjhSMWBE30?enablejsapi=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="action-row">
+        <button class="primary-btn" id="downloadBtn" type="button">Download My Certificate ↓</button>
+        <button class="secondary-btn" id="loveNoteBtn" type="button">Write Me a Love Note ✉</button>
+        <button class="secondary-btn" id="replayBtn" type="button">Replay Celebration ✨</button>
+        <button class="text-btn" id="startAgainBtn" type="button">Start Again</button>
+      </div>
+      <div class="quote-card">“You are a beautiful chapter in a story I never want to end.” <span>♡</span></div>
+    </section>
+  </main>
+
+  <!-- Love note modal -->
+  <div class="modal-backdrop" id="noteModal" aria-hidden="true">
+    <div class="note-modal" role="dialog" aria-modal="true" aria-labelledby="noteTitle">
+      <button class="modal-close" id="closeModal" type="button" aria-label="Close">×</button>
+      <div class="eyebrow">A LITTLE SPACE FOR YOUR HEART</div>
+      <h2 id="noteTitle">Write a Love Note <span class="pink">♡</span></h2>
+      <p>Leave a little message in this keepsake letter.</p>
+      <textarea id="loveNoteText" maxlength="1000" placeholder="Write something from your heart..."></textarea>
+      <button class="primary-btn" id="copyNoteBtn" type="button">Copy My Love Note ♡</button>
+      <span class="copy-status" id="copyStatus" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <footer>MADE WITH LOVE, FOR SOMEONE EXTRAORDINARY <span>♡</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
